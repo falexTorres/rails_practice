@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: mysql
-  databse: library_development
+  database: library_development
   username: root
   password: password
   host: localhost
