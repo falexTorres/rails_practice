@@ -1,6 +1,7 @@
 class BookController < ApplicationController
 	def list
 		@books = Book.all
+		@subjects = Subject.all
 	end
 
 	def show
@@ -14,7 +15,6 @@ class BookController < ApplicationController
 	
 	def create
 		@book = Book.new(book_params)
-
 		if @book.save
 			redirect_to :action => 'list'
 		else
@@ -34,7 +34,6 @@ class BookController < ApplicationController
 
 	def update
 		@book = Book.find(params[:id])
-
 		if @book.update_attributes(book_param)
 			redirect_to :action => 'show', :id => @book
 		else

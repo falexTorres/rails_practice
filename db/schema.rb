@@ -14,13 +14,15 @@
 ActiveRecord::Schema.define(version: 20160829193706) do
 
   create_table "books", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",       limit: 32,    null: false
+    t.float    "price",       limit: 24
+    t.integer  "subject_id",  limit: 4
+    t.text     "description", limit: 65535
+    t.datetime "created_at"
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", limit: 255
   end
 
 end
